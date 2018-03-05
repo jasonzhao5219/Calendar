@@ -1,0 +1,31 @@
+
+ 
+  
+<br>
+<div (click)="dayonebuttonclick()">-----------------------------------------------------
+
+	<h5>March {{myDays+1}}</h5>
+	  <div *ngFor="let ques of tempArrayTwo"><div class="eventcss">Event: {{ques.events}}</div><form  *ngIf="ques.events=='go to seattle' " (submit)="gosomewhere()"><input class="gotosanjose" type="submit" name="uui" value="Go"></form></div> 
+</div>
+<form (submit)="PreSetting()"><input type="submit" name="wwyy" value="PreSetting"></form>
+<form (submit)="getallEvents(tempId)"><input type="submit" name="www" value="Show Event"></form>
+<form (submit)="clearEvents()"><input type="submit" name="wwq" value="Clear Event"></form>
+	<!-- The Modal -->
+	<div id="myModal" class="modal" [ngStyle]="{'display':ishidden}" >
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close" (click)="closebuttonclick()">&times;</span>
+	    <p>Add events or reminder to your Calendar here:</p>
+	    
+	    <form  (submit)="switchtore()"><input class="smallone" [ngStyle]="{'background':eventcolor}" type="submit" name="aac" value="Event"></form><form class="smalltwo"  (submit)="switchtoev()"><input [ngStyle]="{'background':remindercolor}" type="submit" name="aae" value="Reminder"></form>
+	    
+	    <form class="eventform" [ngStyle]="{'display':ishiddenEvent}" (submit)="eventsubmit()"><input class="addeventtitle" type="text" name="title" value="add title" [(ngModel)]="tempEvent.event"  ><br><input type="submit" name="aab" value="Save Event"></form>
+
+	    <form class="reminderform" [ngStyle]="{'display':ishiddenReminder}" ><input class="addreminderttitle" type="text" name="title" value="add Reminder"><br><input type="submit" name="aab" value="Save Reminder"></form>
+
+	  </div>
+
+	</div>
+
+	-----------------------------------------------------

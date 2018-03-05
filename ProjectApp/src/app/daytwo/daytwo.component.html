@@ -1,0 +1,26 @@
+
+
+
+
+<div (click)="dayonebuttonclick()">
+
+	<h4> Day {{whatDay}}   </h4>
+	  <div *ngFor="let ques of tempArrayTwo"><div>Event: {{ques.events}}</div></div> 
+</div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal" [ngStyle]="{'display':ishidden}" >
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close" (click)="closebuttonclick()">&times;</span>
+	    <p>Some text in the Modal..</p>
+	    
+	    <form  (submit)="switchtore()"><input class="smallone" [ngStyle]="{'background':eventcolor}" type="submit" name="aac" value="Event"></form><form class="smalltwo"  (submit)="switchtoev()"><input [ngStyle]="{'background':remindercolor}" type="submit" name="aae" value="Reminder"></form>
+	    
+	    <form class="eventform" [ngStyle]="{'display':ishiddenEvent}" (submit)="eventsubmit()"><input class="addeventtitle" type="text" name="title" value="add title" [(ngModel)]="tempEvent.event"  ><br><input type="submit" name="aab" value="Save Event"></form>
+
+	    <form class="reminderform" [ngStyle]="{'display':ishiddenReminder}" ><input class="addreminderttitle" type="text" name="title" value="add Reminder"><br><input type="submit" name="aab" value="Save Reminder"></form>
+
+	  </div>
+
+	</div>

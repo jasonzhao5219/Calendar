@@ -1,0 +1,4 @@
+<p>
+  management works!
+</p>
+<div *ngFor="let ques of tempArray[0]"><h5>Day: {{ques.day}}</h5><form (submit)="questiondelete(ques._id)">Delete only if You are administrator!<input type="submit" name="Answer" value="Delete"></form></div> 

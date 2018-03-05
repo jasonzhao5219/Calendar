@@ -1,0 +1,21 @@
+<div id="MainCalendar">
+ <p><span style="display:inline-block; width: 6px;"></span> S <span style="display:inline-block; width: 10px;"></span> M <span style="display:inline-block; width: 10px;"></span> T <span style="display:inline-block; width: 10px;"></span> W <span style="display:inline-block; width: 10px;"></span> T <span style="display:inline-block; width: 10px;"></span> F <span style="display:inline-block; width: 10px;"></span> S</p>
+
+  <form id="blockform"><span style="display:inline-block; width: 95px;"></span><form (click)="showdayone()"><input type="submit" name="one" value="1"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdaytwo()"><input type="submit" name="two" value="2"></form><span style="display:inline-block; width: 5px;"></span> <form (click)="showdaythree()"><input type="submit" name="three" value="3"></form> <form (click)="showdayfour()"><input type="submit" name="two" value="4"></form> </form><br>
+
+  <form id="blockform"><form (click)="showdayfive()"><input type="submit" name="two" value="5"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdaysix()"><input type="submit" name="one" value="6"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdayseven()"><input type="submit" name="two" value="7"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdayeight()"><input type="submit" name="two" value="8"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdaynine()"><input type="submit" name="two" value="9"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdayten()"><input type="submit" name="two" value="10"></form><span style="display:inline-block; width: 5px;"></span><form (click)="showdayeleven()"><input type="submit" name="two" value="11"></form><br>
+
+    <form id="blockform"></form><form (click)="showdaytwelf()"><input type="submit" name="two" value="12"></form><form (click)="showdaythirteen()"><input type="submit" name="one" value="13"></form><form (click)="showdayfourteen()"><input type="submit" name="two" value="14"></form><form (click)="showdayfifteen()"> <input type="submit" name="two" value="15"></form><form (click)="showdaysixteen()"><input type="submit" name="two" value="16"></form><form (click)="showdayseventeen()"><input type="submit" name="two" value="17"></form><form (click)="showdayeightteen()"><input type="submit" name="two" value="18"></form></form><br>
+
+    <form id="blockform"></form><form (click)="showdaynineteen()"><input type="submit" name="two" value="19"></form><form (click)="showdaytwenty()"><input type="submit" name="one" value="20"></form><form (click)="showdaytwentyone()"><input type="submit" name="two" value="21"></form><form (click)="showdaytwentytwo()"><input type="submit" name="two" value="22"></form><form (click)="showdaytwentythree()"><input type="submit" name="two" value="23"></form><form (click)="showdaytwentyfour()"><input type="submit" name="two" value="24"></form><form (click)="showdaytwentyfive()"><input type="submit" name="two" value="25"></form><br>
+
+    <form id="blockform"></form><form (click)="showdaytwentysix()"><input type="submit" name="two" value="26"></form><form (click)="showdaytwentyseven()"><input type="submit" name="one" value="27"></form><form (click)="showdaytwentyeight()"><input type="submit" name="two" value="28"></form><form (click)="showdaytwentynine()"><input type="submit" name="two" value="29"></form><form (click)="showdaythirty()"><input type="submit" name="two" value="30"></form><form (click)="showdaythirtyone()"><input type="submit" name="two" value="31"></form><br>
+
+</div>
+
+<!-- <app-dayone > </app-dayone> -->
+<app-dayone  [myDays]="whatDay-3" > </app-dayone>
+<app-dayone  [myDays]="whatDay-2" > </app-dayone>
+<app-dayone [myDays]="whatDay-1" > </app-dayone>
+<app-dayone [myDays]="whatDay" > </app-dayone>
+<app-dayone [myDays]="whatDay+1" > </app-dayone>

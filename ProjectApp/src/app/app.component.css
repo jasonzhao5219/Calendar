@@ -1,0 +1,38 @@
+form, table {
+     display:inline;
+     margin:0px;
+     padding:0px;
+}
+.gb_bc .gb_Cc {
+    height: 24px;
+    width: 74px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.firstC{
+	color: blue;
+}
+.secondA{
+	color: red;
+}
+.thirdL{
+	color: yellow;
+}
+.fourE{
+	color: blue;
+}
+.fiveD{
+	color: gray;
+}
+.sixE{
+	color: red;
+}
+.sevenR{
+	color: green;
+}
+.theN{
+	color: orange;
+}
+.calenderfont{
+	font-size: 400%;
+}
