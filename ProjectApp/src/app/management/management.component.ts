@@ -16,6 +16,18 @@ export class ManagementComponent implements OnInit {
   	this.getAllDays();
   }
   tempArray = [];
+  tempQuestion = {day:1};
+  //add Day in management page
+  addDaysubmit(){
+  	console.log("may i be addDaysubmit?");
+  	let observable = this._httpService.addQuestion(this.tempQuestion);
+    	observable.subscribe(responseData=>{
+    	
+    		console.log("the responsedata in questionsubmit is : ",responseData);
+    		
+    	});
+  }
+
   getAllDays(){
   	console.log("may i be getalldays?");
   	let observable = this._httpService.getdayInService();

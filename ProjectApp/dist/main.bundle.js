@@ -73,7 +73,7 @@ module.exports = "form, table {\n     display:inline;\n     margin:0px;\n     pa
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"calenderfont\"><span class=\"firstC\">C</span><span class=\"secondA\">a</span><span class=\"thirdL\">L</span><span class=\"fourE\">e</span><span class=\"theN\">n</span><span class=\"fiveD\">d</span><span class=\"sixE\">a</span><span class=\"sevenR\">r</span></div>\n  <span style=\"display:inline-block; width: 200px;\"></span> <span>of Jason</span>\n  \n  <H3><a [routerLink]=\"['/march']\"> March</a> 2018</H3>\n\n   <form class=\"Management\" (submit)=\"managementsubmit()\"><input type=\"submit\" name=\"bbg\" value=\"Management\"></form>\n\n  <router-outlet></router-outlet>\n"
+module.exports = "<div class=\"calenderfont\"><span class=\"firstC\">C</span><span class=\"secondA\">a</span><span class=\"thirdL\">L</span><span class=\"fourE\">e</span><span class=\"theN\">n</span><span class=\"fiveD\">d</span><span class=\"sixE\">a</span><span class=\"sevenR\">r</span></div>\n  <span style=\"display:inline-block; width: 200px;\"></span> <span>of Jason </span><br>\n   <span><span style=\"display:inline-block; width: 220px;\"></span> Email: Jasonzhao5219@gmail.com <span style=\"display:inline-block; width: 100px;\"></span> Phone: 626-318-9370 <br><span style=\"display:inline-block; width: 220px;\"></span> LinkedIn: https://www.linkedin.com/in/jasonzhao5219/<span style=\"display:inline-block; width: 100px;\"></span> GitHub: https://github.com/jasonzhao5219 </span>\n   \n   \n\n  \n  <H3><a [routerLink]=\"['/march']\"> March</a> 2018</H3>\n\n   <form class=\"Management\" (submit)=\"managementsubmit()\"><input type=\"submit\" name=\"bbg\" value=\"Management\"></form>\n\n  <router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -243,7 +243,7 @@ module.exports = ".modal {\n    display: none; /* Hidden by default */\n    posi
 /***/ "./src/app/dayone/dayone.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n \n  \n<br>\n<div (click)=\"dayonebuttonclick()\">-----------------------------------------------------\n\n\t<h5>March {{myDays+1}}</h5>\n\t  <div *ngFor=\"let ques of tempArrayTwo\"><div class=\"eventcss\">Event: {{ques.events}}</div><form  *ngIf=\"ques.events=='go to seattle' \" (submit)=\"gosomewhere()\"><input class=\"gotosanjose\" type=\"submit\" name=\"uui\" value=\"Go\"></form></div> \n</div>\n<form (submit)=\"PreSetting()\"><input type=\"submit\" name=\"wwyy\" value=\"PreSetting\"></form>\n<form (submit)=\"getallEvents(tempId)\"><input type=\"submit\" name=\"www\" value=\"Show Event\"></form>\n<form (submit)=\"clearEvents()\"><input type=\"submit\" name=\"wwq\" value=\"Clear Event\"></form>\n\t<!-- The Modal -->\n\t<div id=\"myModal\" class=\"modal\" [ngStyle]=\"{'display':ishidden}\" >\n\n\t  <!-- Modal content -->\n\t  <div class=\"modal-content\">\n\t    <span class=\"close\" (click)=\"closebuttonclick()\">&times;</span>\n\t    <p>Add events or reminder to your Calendar here:</p>\n\t    \n\t    <form  (submit)=\"switchtore()\"><input class=\"smallone\" [ngStyle]=\"{'background':eventcolor}\" type=\"submit\" name=\"aac\" value=\"Event\"></form><form class=\"smalltwo\"  (submit)=\"switchtoev()\"><input [ngStyle]=\"{'background':remindercolor}\" type=\"submit\" name=\"aae\" value=\"Reminder\"></form>\n\t    \n\t    <form class=\"eventform\" [ngStyle]=\"{'display':ishiddenEvent}\" (submit)=\"eventsubmit()\"><input class=\"addeventtitle\" type=\"text\" name=\"title\" value=\"add title\" [(ngModel)]=\"tempEvent.event\"  ><br><input type=\"submit\" name=\"aab\" value=\"Save Event\"></form>\n\n\t    <form class=\"reminderform\" [ngStyle]=\"{'display':ishiddenReminder}\" ><input class=\"addreminderttitle\" type=\"text\" name=\"title\" value=\"add Reminder\"><br><input type=\"submit\" name=\"aab\" value=\"Save Reminder\"></form>\n\n\t  </div>\n\n\t</div>\n\n\t-----------------------------------------------------\n"
+module.exports = "\n \n  \n<br>\n<div (click)=\"dayonebuttonclick()\">-----------------------------------------------------\n\n\t<h5>March {{myDays+1}}</h5>\n\t  <div *ngFor=\"let ques of tempArrayTwo\"><div class=\"eventcss\">Event: {{ques.events}}</div><form  *ngIf=\"ques.events=='go to seattle' \" (submit)=\"gosomewhere()\"><input class=\"gotosanjose\" type=\"submit\" name=\"uui\" value=\"Go\"></form></div> \n</div>\n\n<form (submit)=\"clearEvents()\"><input type=\"submit\" name=\"wwq\" value=\"Clear Event\"></form>\n\t<!-- The Modal -->\n\t<div id=\"myModal\" class=\"modal\" [ngStyle]=\"{'display':ishidden}\" >\n\n\t  <!-- Modal content -->\n\t  <div class=\"modal-content\">\n\t    <span class=\"close\" (click)=\"closebuttonclick()\">&times;</span>\n\t    <p>Add events or reminder to your Calendar here:</p>\n\t    \n\t    <form  (submit)=\"switchtore()\"><input class=\"smallone\" [ngStyle]=\"{'background':eventcolor}\" type=\"submit\" name=\"aac\" value=\"Event\"></form><form class=\"smalltwo\"  (submit)=\"switchtoev()\"><input [ngStyle]=\"{'background':remindercolor}\" type=\"submit\" name=\"aae\" value=\"Reminder\"></form>\n\t    \n\t    <form class=\"eventform\" [ngStyle]=\"{'display':ishiddenEvent}\" (submit)=\"eventsubmit()\"><input class=\"addeventtitle\" type=\"text\" name=\"title\" value=\"add title\" [(ngModel)]=\"tempEvent.event\"  ><br><input type=\"submit\" name=\"aab\" value=\"Save Event\"></form>\n\n\t    <form class=\"reminderform\" [ngStyle]=\"{'display':ishiddenReminder}\" ><input class=\"addreminderttitle\" type=\"text\" name=\"title\" value=\"add Reminder\"><br><input type=\"submit\" name=\"aab\" value=\"Save Reminder\"></form>\n\n\t  </div>\n\n\t</div>\n\n\t\n"
 
 /***/ }),
 
@@ -286,14 +286,12 @@ var DayoneComponent = /** @class */ (function () {
         this.passday = { day: this.whatDay };
         this.tempId = "5a976e13419a7eb3f5e16795";
         this.span = document.getElementsByClassName("close")[0];
-        this.tempQuestion = { day: 31 };
+        this.tempQuestion = { day: 1 };
         this.passToAfter = [];
         this.tempIdAfter = "";
         this.tempArrayForDays = [];
         this.tempdata = {};
         this.cityid = 1689498;
-        this.storedafterSearch = [];
-        this.authorInSearchBar = "";
     }
     DayoneComponent.prototype.ngOnInit = function () {
         this.getAllDays();
@@ -302,6 +300,11 @@ var DayoneComponent = /** @class */ (function () {
         this.generateWhatDay();
         //this.getSpecificQuestion(this.tempId);
         //this.getallEvents(this.tempId);
+    };
+    DayoneComponent.prototype.ngOnChanges = function (changes) {
+        console.log("may i be onChanges? ");
+        this.PreSetting();
+        this.getallEvents(this.tempId);
     };
     DayoneComponent.prototype.generateWhatDay = function () {
         console.log("generateWhatday run");
@@ -380,7 +383,12 @@ var DayoneComponent = /** @class */ (function () {
         this.remindercolor = "blue";
     };
     DayoneComponent.prototype.PreSetting = function () {
-        this.tempEvent._id = this.tempArrayForDays[0][this.whatDay]._id;
+        if (this.whatDay - 1 >= 0) {
+            this.tempEvent._id = this.tempArrayForDays[0][this.whatDay - 1]._id;
+        }
+        else {
+            this.tempEvent._id = this.tempArrayForDays[0][0]._id;
+        }
         this.whatDay = this.myDays;
         this.tempId = this.tempArrayForDays[0][this.whatDay]._id;
         console.log("Successfully PreSetting, the day is: ", this.whatDay, " the tempId is : ", this.tempId);
@@ -445,27 +453,6 @@ var DayoneComponent = /** @class */ (function () {
     // }
     DayoneComponent.prototype.gosomewhere = function () {
         this._router.navigate(['/sanjose']);
-    };
-    DayoneComponent.prototype.searchsubmit = function () {
-        console.log("may i be searchsubmit?");
-        //this.tempAuthors = [];
-        var tempObj = [];
-        console.log("before search, what is temArray", this.tempArray);
-        for (var i = 0; i < this.tempArray[0].length; i++) {
-            //console.log("includes works");
-            if (this.tempArray[0][i].includes(this.authorInSearchBar)) {
-                //console.log("includes works");
-                tempObj.push(this.tempArray[0][i]);
-            }
-        }
-        this.tempArray[0] = [];
-        this.tempArray[0] = tempObj;
-        //this.tempArrayTwo = this.tempArray;
-        //this.storedafterSearch = tempObj;
-        if (this.authorInSearchBar == "") {
-            this.getallEvents(this.tempId);
-        }
-        //this.tempArray[0].filter(this.checkIfInclude);
     };
     __decorate([
         core_1.Input(),
@@ -804,7 +791,7 @@ module.exports = ""
 /***/ "./src/app/management/management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  management works!\n</p>\n<div *ngFor=\"let ques of tempArray[0]\"><h5>Day: {{ques.day}}</h5><form (submit)=\"questiondelete(ques._id)\">Delete only if You are administrator!<input type=\"submit\" name=\"Answer\" value=\"Delete\"></form></div> "
+module.exports = "<p>\n  management works!\n</p>\n<form (submit)=\"addDaysubmit()\"><input type=\"text\" name=\"ooao\" [(ngModel)]=\"tempQuestion.day\" ><input type=\"submit\" name=\"oouy\" value=\"Add a Day\"></form>\n<div *ngFor=\"let ques of tempArray[0]\"><h5>Day: {{ques.day}}</h5><form (submit)=\"questiondelete(ques._id)\">Delete only if You are administrator!<input type=\"submit\" name=\"Answer\" value=\"Delete\"></form></div> "
 
 /***/ }),
 
@@ -832,9 +819,18 @@ var ManagementComponent = /** @class */ (function () {
         this._route = _route;
         this._router = _router;
         this.tempArray = [];
+        this.tempQuestion = { day: 1 };
     }
     ManagementComponent.prototype.ngOnInit = function () {
         this.getAllDays();
+    };
+    //add Day in management page
+    ManagementComponent.prototype.addDaysubmit = function () {
+        console.log("may i be addDaysubmit?");
+        var observable = this._httpService.addQuestion(this.tempQuestion);
+        observable.subscribe(function (responseData) {
+            console.log("the responsedata in questionsubmit is : ", responseData);
+        });
     };
     ManagementComponent.prototype.getAllDays = function () {
         var _this = this;
@@ -888,7 +884,7 @@ module.exports = "form, table {\n     display:inline;\n     margin:0px;\n     pa
 /***/ "./src/app/march/march.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"MainCalendar\">\n <p><span style=\"display:inline-block; width: 6px;\"></span> S <span style=\"display:inline-block; width: 10px;\"></span> M <span style=\"display:inline-block; width: 10px;\"></span> T <span style=\"display:inline-block; width: 10px;\"></span> W <span style=\"display:inline-block; width: 10px;\"></span> T <span style=\"display:inline-block; width: 10px;\"></span> F <span style=\"display:inline-block; width: 10px;\"></span> S</p>\n\n  <form id=\"blockform\"><span style=\"display:inline-block; width: 95px;\"></span><form (click)=\"showdayone()\"><input type=\"submit\" name=\"one\" value=\"1\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdaytwo()\"><input type=\"submit\" name=\"two\" value=\"2\"></form><span style=\"display:inline-block; width: 5px;\"></span> <form (click)=\"showdaythree()\"><input type=\"submit\" name=\"three\" value=\"3\"></form> <form (click)=\"showdayfour()\"><input type=\"submit\" name=\"two\" value=\"4\"></form> </form><br>\n\n  <form id=\"blockform\"><form (click)=\"showdayfive()\"><input type=\"submit\" name=\"two\" value=\"5\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdaysix()\"><input type=\"submit\" name=\"one\" value=\"6\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayseven()\"><input type=\"submit\" name=\"two\" value=\"7\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayeight()\"><input type=\"submit\" name=\"two\" value=\"8\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdaynine()\"><input type=\"submit\" name=\"two\" value=\"9\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayten()\"><input type=\"submit\" name=\"two\" value=\"10\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayeleven()\"><input type=\"submit\" name=\"two\" value=\"11\"></form><br>\n\n    <form id=\"blockform\"></form><form (click)=\"showdaytwelf()\"><input type=\"submit\" name=\"two\" value=\"12\"></form><form (click)=\"showdaythirteen()\"><input type=\"submit\" name=\"one\" value=\"13\"></form><form (click)=\"showdayfourteen()\"><input type=\"submit\" name=\"two\" value=\"14\"></form><form (click)=\"showdayfifteen()\"> <input type=\"submit\" name=\"two\" value=\"15\"></form><form (click)=\"showdaysixteen()\"><input type=\"submit\" name=\"two\" value=\"16\"></form><form (click)=\"showdayseventeen()\"><input type=\"submit\" name=\"two\" value=\"17\"></form><form (click)=\"showdayeightteen()\"><input type=\"submit\" name=\"two\" value=\"18\"></form></form><br>\n\n    <form id=\"blockform\"></form><form (click)=\"showdaynineteen()\"><input type=\"submit\" name=\"two\" value=\"19\"></form><form (click)=\"showdaytwenty()\"><input type=\"submit\" name=\"one\" value=\"20\"></form><form (click)=\"showdaytwentyone()\"><input type=\"submit\" name=\"two\" value=\"21\"></form><form (click)=\"showdaytwentytwo()\"><input type=\"submit\" name=\"two\" value=\"22\"></form><form (click)=\"showdaytwentythree()\"><input type=\"submit\" name=\"two\" value=\"23\"></form><form (click)=\"showdaytwentyfour()\"><input type=\"submit\" name=\"two\" value=\"24\"></form><form (click)=\"showdaytwentyfive()\"><input type=\"submit\" name=\"two\" value=\"25\"></form><br>\n\n    <form id=\"blockform\"></form><form (click)=\"showdaytwentysix()\"><input type=\"submit\" name=\"two\" value=\"26\"></form><form (click)=\"showdaytwentyseven()\"><input type=\"submit\" name=\"one\" value=\"27\"></form><form (click)=\"showdaytwentyeight()\"><input type=\"submit\" name=\"two\" value=\"28\"></form><form (click)=\"showdaytwentynine()\"><input type=\"submit\" name=\"two\" value=\"29\"></form><form (click)=\"showdaythirty()\"><input type=\"submit\" name=\"two\" value=\"30\"></form><form (click)=\"showdaythirtyone()\"><input type=\"submit\" name=\"two\" value=\"31\"></form><br>\n\n</div>\n\n<!-- <app-dayone > </app-dayone> -->\n<app-dayone  [myDays]=\"whatDay-3\" > </app-dayone>\n<app-dayone  [myDays]=\"whatDay-2\" > </app-dayone>\n<app-dayone [myDays]=\"whatDay-1\" > </app-dayone>\n<app-dayone [myDays]=\"whatDay\" > </app-dayone>\n<app-dayone [myDays]=\"whatDay+1\" > </app-dayone>\n"
+module.exports = "<div id=\"MainCalendar\">\n <p><span style=\"display:inline-block; width: 6px;\"></span> S <span style=\"display:inline-block; width: 10px;\"></span> M <span style=\"display:inline-block; width: 10px;\"></span> T <span style=\"display:inline-block; width: 10px;\"></span> W <span style=\"display:inline-block; width: 10px;\"></span> T <span style=\"display:inline-block; width: 10px;\"></span> F <span style=\"display:inline-block; width: 10px;\"></span> S</p>\n\n  <form id=\"blockform\"><span style=\"display:inline-block; width: 95px;\"></span><form (click)=\"showdayone()\"><input type=\"submit\" name=\"one\" value=\"1\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdaytwo()\"><input type=\"submit\" name=\"two\" value=\"2\"></form><span style=\"display:inline-block; width: 5px;\"></span> <form (click)=\"showdaythree()\"><input type=\"submit\" name=\"three\" value=\"3\"></form> <form (click)=\"showdayfour()\"><input type=\"submit\" name=\"two\" value=\"4\"></form> </form><br>\n\n  <form id=\"blockform\"><form (click)=\"showdayfive()\"><input type=\"submit\" name=\"two\" value=\"5\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdaysix()\"><input type=\"submit\" name=\"one\" value=\"6\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayseven()\"><input type=\"submit\" name=\"two\" value=\"7\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayeight()\"><input type=\"submit\" name=\"two\" value=\"8\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdaynine()\"><input type=\"submit\" name=\"two\" value=\"9\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayten()\"><input type=\"submit\" name=\"two\" value=\"10\"></form><span style=\"display:inline-block; width: 5px;\"></span><form (click)=\"showdayeleven()\"><input type=\"submit\" name=\"two\" value=\"11\"></form><br>\n\n    <form id=\"blockform\"></form><form (click)=\"showdaytwelf()\"><input type=\"submit\" name=\"two\" value=\"12\"></form><form (click)=\"showdaythirteen()\"><input type=\"submit\" name=\"one\" value=\"13\"></form><form (click)=\"showdayfourteen()\"><input type=\"submit\" name=\"two\" value=\"14\"></form><form (click)=\"showdayfifteen()\"> <input type=\"submit\" name=\"two\" value=\"15\"></form><form (click)=\"showdaysixteen()\"><input type=\"submit\" name=\"two\" value=\"16\"></form><form (click)=\"showdayseventeen()\"><input type=\"submit\" name=\"two\" value=\"17\"></form><form (click)=\"showdayeightteen()\"><input type=\"submit\" name=\"two\" value=\"18\"></form></form><br>\n\n    <form id=\"blockform\"></form><form (click)=\"showdaynineteen()\"><input type=\"submit\" name=\"two\" value=\"19\"></form><form (click)=\"showdaytwenty()\"><input type=\"submit\" name=\"one\" value=\"20\"></form><form (click)=\"showdaytwentyone()\"><input type=\"submit\" name=\"two\" value=\"21\"></form><form (click)=\"showdaytwentytwo()\"><input type=\"submit\" name=\"two\" value=\"22\"></form><form (click)=\"showdaytwentythree()\"><input type=\"submit\" name=\"two\" value=\"23\"></form><form (click)=\"showdaytwentyfour()\"><input type=\"submit\" name=\"two\" value=\"24\"></form><form (click)=\"showdaytwentyfive()\"><input type=\"submit\" name=\"two\" value=\"25\"></form><br>\n\n    <form id=\"blockform\"></form><form (click)=\"showdaytwentysix()\"><input type=\"submit\" name=\"two\" value=\"26\"></form><form (click)=\"showdaytwentyseven()\"><input type=\"submit\" name=\"one\" value=\"27\"></form><form (click)=\"showdaytwentyeight()\"><input type=\"submit\" name=\"two\" value=\"28\"></form><form (click)=\"showdaytwentynine()\"><input type=\"submit\" name=\"two\" value=\"29\"></form><form (click)=\"showdaythirty()\"><input type=\"submit\" name=\"two\" value=\"30\"></form><form (click)=\"showdaythirtyone()\"><input type=\"submit\" name=\"two\" value=\"31\"></form><br>\n\n</div>\n\n<!-- <app-dayone > </app-dayone> -->\n<span *ngIf=\"whatDay > 2\">\n\t<app-dayone  [myDays]=\"whatDay-3\"  > </app-dayone>\n</span>\n<span *ngIf=\"whatDay >1\">\n\t<app-dayone  [myDays]=\"whatDay-2\" > </app-dayone>\n</span>\n<app-dayone [myDays]=\"whatDay-1\" > </app-dayone>\n<span *ngIf=\"whatDay<31\">\n\t<app-dayone [myDays]=\"whatDay\" > </app-dayone>\n</span>\n<span *ngIf=\"whatDay<30\">\n\t<app-dayone [myDays]=\"whatDay+1\" > </app-dayone>\n</span>\n"
 
 /***/ }),
 

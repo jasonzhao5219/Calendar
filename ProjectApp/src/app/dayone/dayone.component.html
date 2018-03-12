@@ -7,8 +7,7 @@
 	<h5>March {{myDays+1}}</h5>
 	  <div *ngFor="let ques of tempArrayTwo"><div class="eventcss">Event: {{ques.events}}</div><form  *ngIf="ques.events=='go to seattle' " (submit)="gosomewhere()"><input class="gotosanjose" type="submit" name="uui" value="Go"></form></div> 
 </div>
-<form (submit)="PreSetting()"><input type="submit" name="wwyy" value="PreSetting"></form>
-<form (submit)="getallEvents(tempId)"><input type="submit" name="www" value="Show Event"></form>
+
 <form (submit)="clearEvents()"><input type="submit" name="wwq" value="Clear Event"></form>
 	<!-- The Modal -->
 	<div id="myModal" class="modal" [ngStyle]="{'display':ishidden}" >
@@ -28,4 +27,4 @@
 
 	</div>
 
-	-----------------------------------------------------
+	

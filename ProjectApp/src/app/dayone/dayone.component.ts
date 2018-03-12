@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,OnChanges,SimpleChanges } from '@angular/core';
 import { HttpService } from '.././http.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DaytwoComponent } from '.././daytwo/daytwo.component';
@@ -22,6 +22,11 @@ export class DayoneComponent implements OnInit {
   	//this.getallEvents(this.tempId);
   	
   }
+  ngOnChanges(changes: SimpleChanges) {
+  	console.log("may i be onChanges? ");
+  	this.PreSetting();
+  	this.getallEvents(this.tempId);
+	}
  @Input() myDays;
   whatDay = this.myDays;
   tempEvent = {_id:"",event:"",whatday:this.whatDay};
@@ -39,7 +44,7 @@ export class DayoneComponent implements OnInit {
   passday ={day:this.whatDay};
   tempId = "5a976e13419a7eb3f5e16795";
   span = document.getElementsByClassName("close")[0];
-  tempQuestion = {day:31};
+  tempQuestion = {day:1};
   passToAfter = [];
   tempIdAfter = "";
   tempArrayForDays = [];
@@ -133,7 +138,12 @@ questionsubmit(){
   	this.remindercolor = "blue";
   }
   PreSetting(){
-  	this.tempEvent._id = this.tempArrayForDays[0][this.whatDay]._id;
+  	if (this.whatDay-1>=0){
+  		this.tempEvent._id = this.tempArrayForDays[0][this.whatDay-1]._id;
+    }else{
+    	this.tempEvent._id = this.tempArrayForDays[0][0]._id;
+    }
+
   	this.whatDay = this.myDays;
   	this.tempId = this.tempArrayForDays[0][this.whatDay]._id;
   	console.log("Successfully PreSetting, the day is: ",this.whatDay," the tempId is : ",this.tempId);
@@ -206,29 +216,29 @@ questionsubmit(){
   gosomewhere(){
   	this._router.navigate(['/sanjose']);
   }
-   storedafterSearch = [];
-   authorInSearchBar = "";
-  searchsubmit(){
-    	console.log("may i be searchsubmit?");
-    	//this.tempAuthors = [];
-    	var tempObj = [];
-    	console.log("before search, what is temArray",this.tempArray);
-    	for(var i = 0; i<this.tempArray[0].length;i++){
-    		//console.log("includes works");
-	    		if (this.tempArray[0][i].includes(this.authorInSearchBar) ){
-	    			//console.log("includes works");
-	    			tempObj.push( this.tempArray[0][i]);
+  //  storedafterSearch = [];
+  //  authorInSearchBar = "";
+  // searchsubmit(){
+  //   	console.log("may i be searchsubmit?");
+  //   	//this.tempAuthors = [];
+  //   	var tempObj = [];
+  //   	console.log("before search, what is temArray",this.tempArray);
+  //   	for(var i = 0; i<this.tempArray[0].length;i++){
+  //   		//console.log("includes works");
+	 //    		if (this.tempArray[0][i].includes(this.authorInSearchBar) ){
+	 //    			//console.log("includes works");
+	 //    			tempObj.push( this.tempArray[0][i]);
 	    			
-	    		}
+	 //    		}
 	    		
-	    	}
-	    	this.tempArray[0] = [];
-	    	this.tempArray[0]=tempObj;
-	    	//this.tempArrayTwo = this.tempArray;
-	    	//this.storedafterSearch = tempObj;
-	    	if (this.authorInSearchBar == ""){
-	    		this.getallEvents(this.tempId);
-	    	}
-	    	//this.tempArray[0].filter(this.checkIfInclude);
-    }
+	 //    	}
+	 //    	this.tempArray[0] = [];
+	 //    	this.tempArray[0]=tempObj;
+	 //    	//this.tempArrayTwo = this.tempArray;
+	 //    	//this.storedafterSearch = tempObj;
+	 //    	if (this.authorInSearchBar == ""){
+	 //    		this.getallEvents(this.tempId);
+	 //    	}
+	 //    	//this.tempArray[0].filter(this.checkIfInclude);
+  //   }
 }

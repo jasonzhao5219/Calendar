@@ -82,7 +82,7 @@ app.post('/api/addEvent', function(req, res){
   	console.log("may i be server to add event?");
   	console.log("what is req.body",req.body);
   	day.findOne({_id: req.body._id}, function(err, post){
-  		console.log("what is post: ",post);
+  		
   	var newEvent = new event();
   		newEvent.events = req.body.event;
   			
@@ -91,6 +91,7 @@ app.post('/api/addEvent', function(req, res){
         	//newQuestion.options.push(NewPoll);
         	//console.log("what is newDay Before PUSH",newDay);
         	post.events.push(newEvent);
+          console.log("what is post: ",post);
         	//console.log("what is newDay (events array) After PUSH: ",newDay);
         	
         
@@ -200,22 +201,41 @@ app.delete('/api/delete/:_id', function(req, res){
   
 })     
 
-app.delete('/api/eventsdelete/:_id', function(req, res){
-  console.log("may i be delete in server?");
-  console.log("what the req.params._id is: ",req.params._id);
-  
-      
-              day.events.remove({_id:req.params._id}, function(errtwo){
-             if(errtwo) {
-                  console.log('something went wrong');
-                  res.json(errtwo);
-            
-            } else { 
-                  console.log('delete events work');
-              res.json({message:'deleted'});
-          }
-        })
-})
+// app.post('/api/eventsdelete/:_id', function(req, res){
+//   console.log("may i be server to delete event?");
+//     console.log("what is req.params._id",req.params._id);
+//     day.findOne({_id: req.params._id}, function(err, post){
+//       console.log("what is post: ",post);
+    
+        
+//      // now save both to the DB
+//         event.findOne({_id: req.params._id}, function(err, eventpost){
+//           //newQuestion.options.push(NewPoll);
+//           //console.log("what is newDay Before PUSH",newDay);
+//           eventpost.events.p(newEvent);
+//           //console.log("what is newDay (events array) After PUSH: ",newDay);
+          
+        
+//                  post.save(function(errtwo){
+//                   if(errtwo){
+//                     console.log('ErrorTwo');
+//                           res.json(errtwo);
+//                   }else{
+//                   if(err) {
+//                             console.log('Error');
+//                           res.json(err);
+//                        }else{
+                          
+                            
+//                             console.log("save event successfully!");
+//                                 res.json(post);
+//                            }
+//                       } 
+//                      })
+                  
+//               });
+//   })
+// })
   //
   
   

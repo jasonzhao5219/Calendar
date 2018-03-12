@@ -14,8 +14,16 @@
 </div>
 
 <!-- <app-dayone > </app-dayone> -->
-<app-dayone  [myDays]="whatDay-3" > </app-dayone>
-<app-dayone  [myDays]="whatDay-2" > </app-dayone>
+<span *ngIf="whatDay > 2">
+	<app-dayone  [myDays]="whatDay-3"  > </app-dayone>
+</span>
+<span *ngIf="whatDay >1">
+	<app-dayone  [myDays]="whatDay-2" > </app-dayone>
+</span>
 <app-dayone [myDays]="whatDay-1" > </app-dayone>
-<app-dayone [myDays]="whatDay" > </app-dayone>
-<app-dayone [myDays]="whatDay+1" > </app-dayone>
+<span *ngIf="whatDay<31">
+	<app-dayone [myDays]="whatDay" > </app-dayone>
+</span>
+<span *ngIf="whatDay<30">
+	<app-dayone [myDays]="whatDay+1" > </app-dayone>
+</span>
