@@ -14,8 +14,8 @@ const routes: Routes = [
 	   { path: 'dayone/:id',component: DayoneComponent },
 	   { path: 'march',component: MarchComponent },
 	    { path: 'management',component: ManagementComponent },
-	  //  { path: 'daytwo/:id',component: DaytwoComponent },
-	   // { path: 'daythree/:id',component: DaythreeComponent },
+	    { path: 'daytwo',component: DaytwoComponent },
+	    { path: 'daythree',component: DaythreeComponent },
 	   { path: 'sanjose',component: SanjoseComponent },
 ];
 

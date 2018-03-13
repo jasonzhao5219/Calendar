@@ -1,12 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
 <div class="calenderfont"><span class="firstC">C</span><span class="secondA">a</span><span class="thirdL">L</span><span class="fourE">e</span><span class="theN">n</span><span class="fiveD">d</span><span class="sixE">a</span><span class="sevenR">r</span></div>
-  <span style="display:inline-block; width: 200px;"></span> <span>of Jason </span><br>
-   <span><span style="display:inline-block; width: 220px;"></span> Email: Jasonzhao5219@gmail.com <span style="display:inline-block; width: 100px;"></span> Phone: 626-318-9370 <br><span style="display:inline-block; width: 220px;"></span> LinkedIn: https://www.linkedin.com/in/jasonzhao5219/<span style="display:inline-block; width: 100px;"></span> GitHub: https://github.com/jasonzhao5219 </span>
+  <span style="display:inline-block; width: 200px;"></span> <span>Of <a [routerLink]="['/daytwo']"> Jason</a> (<--click Jason to see portfolio)</span><br>
+   
    
    
 
-  
-  <H3><a [routerLink]="['/march']"> March</a> 2018</H3>
+    
+  <H3><a [routerLink]="['/march']"> March</a> 2018 (<- click)</H3>
+
 
    <form class="Management" (submit)="managementsubmit()"><input type="submit" name="bbg" value="Management"></form>
 
   <router-outlet></router-outlet>
+
+
+<footer class="container-fluid text-center">
+  <p>© Calendar 2018</p>
+</footer>
+
+</body>
+</html>

@@ -138,13 +138,14 @@ questionsubmit(){
   	this.remindercolor = "blue";
   }
   PreSetting(){
+  	this.whatDay = this.myDays;
   	if (this.whatDay-1>=0){
-  		this.tempEvent._id = this.tempArrayForDays[0][this.whatDay-1]._id;
+  		this.tempEvent._id = this.tempArrayForDays[0][this.whatDay]._id;
     }else{
     	this.tempEvent._id = this.tempArrayForDays[0][0]._id;
     }
 
-  	this.whatDay = this.myDays;
+  	
   	this.tempId = this.tempArrayForDays[0][this.whatDay]._id;
   	console.log("Successfully PreSetting, the day is: ",this.whatDay," the tempId is : ",this.tempId);
   }

@@ -36,6 +36,8 @@ var showevent_component_1 = __webpack_require__("./src/app/showevent/showevent.c
 var dayone_component_1 = __webpack_require__("./src/app/dayone/dayone.component.ts");
 var march_component_1 = __webpack_require__("./src/app/march/march.component.ts");
 var management_component_1 = __webpack_require__("./src/app/management/management.component.ts");
+var daytwo_component_1 = __webpack_require__("./src/app/daytwo/daytwo.component.ts");
+var daythree_component_1 = __webpack_require__("./src/app/daythree/daythree.component.ts");
 var sanjose_component_1 = __webpack_require__("./src/app/sanjose/sanjose.component.ts");
 var routes = [
     { path: '', component: dashboard_component_1.DashboardComponent },
@@ -43,8 +45,8 @@ var routes = [
     { path: 'dayone/:id', component: dayone_component_1.DayoneComponent },
     { path: 'march', component: march_component_1.MarchComponent },
     { path: 'management', component: management_component_1.ManagementComponent },
-    //  { path: 'daytwo/:id',component: DaytwoComponent },
-    // { path: 'daythree/:id',component: DaythreeComponent },
+    { path: 'daytwo', component: daytwo_component_1.DaytwoComponent },
+    { path: 'daythree', component: daythree_component_1.DaythreeComponent },
     { path: 'sanjose', component: sanjose_component_1.SanjoseComponent },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -73,7 +75,7 @@ module.exports = "form, table {\n     display:inline;\n     margin:0px;\n     pa
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"calenderfont\"><span class=\"firstC\">C</span><span class=\"secondA\">a</span><span class=\"thirdL\">L</span><span class=\"fourE\">e</span><span class=\"theN\">n</span><span class=\"fiveD\">d</span><span class=\"sixE\">a</span><span class=\"sevenR\">r</span></div>\n  <span style=\"display:inline-block; width: 200px;\"></span> <span>of Jason </span><br>\n   <span><span style=\"display:inline-block; width: 220px;\"></span> Email: Jasonzhao5219@gmail.com <span style=\"display:inline-block; width: 100px;\"></span> Phone: 626-318-9370 <br><span style=\"display:inline-block; width: 220px;\"></span> LinkedIn: https://www.linkedin.com/in/jasonzhao5219/<span style=\"display:inline-block; width: 100px;\"></span> GitHub: https://github.com/jasonzhao5219 </span>\n   \n   \n\n  \n  <H3><a [routerLink]=\"['/march']\"> March</a> 2018</H3>\n\n   <form class=\"Management\" (submit)=\"managementsubmit()\"><input type=\"submit\" name=\"bbg\" value=\"Management\"></form>\n\n  <router-outlet></router-outlet>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n    /* Remove the navbar's default margin-bottom and rounded borders */ \n    .navbar {\n      margin-bottom: 0;\n      border-radius: 0;\n    }\n    \n    /* Add a gray background color and some padding to the footer */\n    footer {\n      background-color: #f2f2f2;\n      padding: 25px;\n    }\n  </style>\n</head>\n<body>\n\n<div class=\"calenderfont\"><span class=\"firstC\">C</span><span class=\"secondA\">a</span><span class=\"thirdL\">L</span><span class=\"fourE\">e</span><span class=\"theN\">n</span><span class=\"fiveD\">d</span><span class=\"sixE\">a</span><span class=\"sevenR\">r</span></div>\n  <span style=\"display:inline-block; width: 200px;\"></span> <span>Of <a [routerLink]=\"['/daytwo']\"> Jason</a> (<--click Jason to see portfolio)</span><br>\n   \n   \n   \n\n    \n  <H3><a [routerLink]=\"['/march']\"> March</a> 2018 (<- click)</H3>\n\n\n   <form class=\"Management\" (submit)=\"managementsubmit()\"><input type=\"submit\" name=\"bbg\" value=\"Management\"></form>\n\n  <router-outlet></router-outlet>\n\n\n<footer class=\"container-fluid text-center\">\n  <p>© Calendar 2018</p>\n</footer>\n\n</body>\n</html>"
 
 /***/ }),
 
@@ -383,13 +385,13 @@ var DayoneComponent = /** @class */ (function () {
         this.remindercolor = "blue";
     };
     DayoneComponent.prototype.PreSetting = function () {
+        this.whatDay = this.myDays;
         if (this.whatDay - 1 >= 0) {
-            this.tempEvent._id = this.tempArrayForDays[0][this.whatDay - 1]._id;
+            this.tempEvent._id = this.tempArrayForDays[0][this.whatDay]._id;
         }
         else {
             this.tempEvent._id = this.tempArrayForDays[0][0]._id;
         }
-        this.whatDay = this.myDays;
         this.tempId = this.tempArrayForDays[0][this.whatDay]._id;
         console.log("Successfully PreSetting, the day is: ", this.whatDay, " the tempId is : ", this.tempId);
     };
@@ -485,7 +487,7 @@ module.exports = ""
 /***/ "./src/app/daythree/daythree.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  daythree works!\n</p>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n    /* Remove the navbar's default margin-bottom and rounded borders */ \n    .navbar {\n      margin-bottom: 0;\n      border-radius: 0;\n    }\n    \n    /* Add a gray background color and some padding to the footer */\n    footer {\n      background-color: #f2f2f2;\n      padding: 25px;\n    }\n  </style>\n</head>\n<body>\n\t<nav class=\"navbar navbar-inverse\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      \n      <a class=\"navbar-brand\" [routerLink]=\"['/']\">Calendar</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"/daytwo\">Portfolio</a></li>\n        \n        \n        <li><a href=\"daythree\">Contact Jason</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\t<br>\n\t\n\t<br>\n\t<h3>\n\t    <span><span style=\"display:inline-block; width: 220px;\"></span> Email: Jasonzhao5219@gmail.com \n\t    <br>\n\t    <br><span style=\"display:inline-block; width: 100px;\"></span> Phone: 626-318-9370 \n\t    <br>\n\t    <br><span style=\"display:inline-block; width: 220px;\"></span> LinkedIn: https://www.linkedin.com/in/jasonzhao5219/\n\t    <br>\n\t    <br><span style=\"display:inline-block; width: 100px;\"></span> GitHub: https://github.com/jasonzhao5219 </span>\n\t</h3>\n</body>\n</html>"
 
 /***/ }),
 
@@ -505,8 +507,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var http_service_1 = __webpack_require__("./src/app/http.service.ts");
+var router_1 = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var DaythreeComponent = /** @class */ (function () {
-    function DaythreeComponent() {
+    function DaythreeComponent(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
     }
     DaythreeComponent.prototype.ngOnInit = function () {
     };
@@ -516,7 +523,9 @@ var DaythreeComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/daythree/daythree.component.html"),
             styles: [__webpack_require__("./src/app/daythree/daythree.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [http_service_1.HttpService,
+            router_1.ActivatedRoute,
+            router_1.Router])
     ], DaythreeComponent);
     return DaythreeComponent;
 }());
@@ -535,7 +544,7 @@ module.exports = ""
 /***/ "./src/app/daytwo/daytwo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n\n<div (click)=\"dayonebuttonclick()\">\n\n\t<h4> Day {{whatDay}}   </h4>\n\t  <div *ngFor=\"let ques of tempArrayTwo\"><div>Event: {{ques.events}}</div></div> \n</div>\n\t<!-- The Modal -->\n\t<div id=\"myModal\" class=\"modal\" [ngStyle]=\"{'display':ishidden}\" >\n\n\t  <!-- Modal content -->\n\t  <div class=\"modal-content\">\n\t    <span class=\"close\" (click)=\"closebuttonclick()\">&times;</span>\n\t    <p>Some text in the Modal..</p>\n\t    \n\t    <form  (submit)=\"switchtore()\"><input class=\"smallone\" [ngStyle]=\"{'background':eventcolor}\" type=\"submit\" name=\"aac\" value=\"Event\"></form><form class=\"smalltwo\"  (submit)=\"switchtoev()\"><input [ngStyle]=\"{'background':remindercolor}\" type=\"submit\" name=\"aae\" value=\"Reminder\"></form>\n\t    \n\t    <form class=\"eventform\" [ngStyle]=\"{'display':ishiddenEvent}\" (submit)=\"eventsubmit()\"><input class=\"addeventtitle\" type=\"text\" name=\"title\" value=\"add title\" [(ngModel)]=\"tempEvent.event\"  ><br><input type=\"submit\" name=\"aab\" value=\"Save Event\"></form>\n\n\t    <form class=\"reminderform\" [ngStyle]=\"{'display':ishiddenReminder}\" ><input class=\"addreminderttitle\" type=\"text\" name=\"title\" value=\"add Reminder\"><br><input type=\"submit\" name=\"aab\" value=\"Save Reminder\"></form>\n\n\t  </div>\n\n\t</div>"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n    /* Remove the navbar's default margin-bottom and rounded borders */ \n    .navbar {\n      margin-bottom: 0;\n      border-radius: 0;\n    }\n    \n    /* Add a gray background color and some padding to the footer */\n    footer {\n      background-color: #f2f2f2;\n      padding: 25px;\n    }\n  </style>\n</head>\n<body>\n\n<nav class=\"navbar navbar-inverse\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      \n      <a class=\"navbar-brand\" [routerLink]=\"['/']\">Calendar</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"/daytwo\">Portfolio</a></li>\n        \n        \n        <li><a href=\"daythree\">Contact Jason</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"jumbotron\">\n  <div class=\"container text-center\">\n    <h1>Jason Portfolio</h1>      \n    <p>Jason was a child good at math, he dream to become a programmer, since his father bought him 1st Personal Computer in his Ten years old. After six years study, he got CS becholor and master. He still keep passion in programming, cause he is a  \"fool\", who always enjoying programming as playing games. Hope you like his work and feel free to contact Jason (Me) ^_^</p>\n  </div>\n</div>\n  \n<div class=\"container-fluid bg-3 text-center\">    \n  <h3>Plz try my calendar,and use it as google calendar.</h3><h5> Click a specific month (the thing above \"Management\" button) to start.</h5><br>\n  <div class=\"row\">\n    <div class=\"col-sm-3\">\n      \n      <img src=\"https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/29178514_1930519407018015_3888243075708878848_n.jpg?oh=b40e0e1ba5d11252ec3edae158754ed9&oe=5B33EB5B\" style=\"margin-left:480px;  width:800% height:250%\" alt=\"Image\">\n    </div>\n    \n  </div>\n</div><br>\n\n\n\n\n\n</body>\n</html>"
 
 /***/ }),
 
@@ -562,144 +571,9 @@ var DaytwoComponent = /** @class */ (function () {
         this._httpService = _httpService;
         this._route = _route;
         this._router = _router;
-        this.whatDay = this.myDays + 1;
-        this.tempEvent = { _id: "", event: "", whatday: this.whatDay };
-        this.errors = {};
-        this.ishidden = "none";
-        this.ishiddenEvent = "block";
-        this.ishiddenReminder = "none";
-        this.eventcolor = "blue";
-        this.remindercolor = "white";
-        this.modal = document.getElementById('myModal');
-        this.btn = document.getElementById("myBtn");
-        this.StoreEvent = {};
-        this.tempArray = [];
-        this.tempArrayTwo = [];
-        this.passday = { day: this.whatDay };
-        this.tempId = "";
-        this.span = document.getElementsByClassName("close")[0];
-        this.tempQuestion = { day: 5 };
     }
     DaytwoComponent.prototype.ngOnInit = function () {
-        this.getAllDays();
-        this.generateWhatDay();
-        //this.getSpecificQuestion();
-        //this.getallEvents(this.tempId);
     };
-    //temporary need :
-    DaytwoComponent.prototype.questionsubmit = function () {
-        console.log("may i be question submit?");
-        var observable = this._httpService.addQuestion(this.tempQuestion);
-        observable.subscribe(function (responseData) {
-            console.log("the responsedata in questionsubmit is : ", responseData);
-        });
-    };
-    DaytwoComponent.prototype.generateWhatDay = function () {
-        this.whatDay = this.myDays + 1;
-    };
-    DaytwoComponent.prototype.getAllDays = function () {
-        var _this = this;
-        console.log("may i be getalldays in day Two?");
-        var observable = this._httpService.getdayInService();
-        observable.subscribe(function (responseData) {
-            //this.tempAuthors.push(responseData);
-            _this.tempArray = [];
-            console.log("the responsedata in getallDay In DayTwo is : ", responseData);
-            _this.tempArray.push(responseData);
-            console.log(_this.tempArray);
-            _this.tempId = _this.tempArray[0][_this.whatDay - 1];
-            console.log("In day two, tempId is : ", _this.tempId);
-            //this._router.navigate(['/']);
-            // 	for(var i = 0; i<this.tempArray[0].length;i++){
-            // 		var date = new Date(this.tempArray[0][i])
-            // }
-        });
-    };
-    // passID(){
-    // 	this._route.params.subscribe((params: Params) => {
-    // 		if (params['id'] == undefined){
-    // 			this.tempId ="5a9733ca25e374b03bf3ed79";
-    // 		}else{
-    // 			this.tempId = params['id'];
-    // 			this.tempEvent._id = params['id']
-    // 		}
-    // 		console.log("show one id is: ",this.tempId);
-    // 	});
-    // }
-    DaytwoComponent.prototype.dayonebuttonclick = function () {
-        console.log("may i be dayonebuttonclick ?");
-        this.ishidden = "block";
-        //this.modal.style.display = "block";
-        //console.log("test one",this.modal.style.display);
-    };
-    DaytwoComponent.prototype.closebuttonclick = function () {
-        this.ishidden = "none";
-    };
-    DaytwoComponent.prototype.eventsubmit = function () {
-        var _this = this;
-        console.log("may i be event submit?");
-        console.log("what is tempEvent", this.tempEvent);
-        var observable = this._httpService.addEvent(this.tempEvent);
-        observable.subscribe(function (responseData) {
-            //this.tempAuthors.push(responseData);
-            console.log("the responsedata in eventsubmit is : ", responseData);
-            _this.errors = responseData;
-            _this.getallEvents(_this.tempId);
-            //this.StoreEvent = responseData;
-            //this._router.navigate(['/']);
-        });
-    };
-    DaytwoComponent.prototype.switchtore = function () {
-        this.ishiddenEvent = "block";
-        this.ishiddenReminder = "none";
-        this.eventcolor = "blue";
-        this.remindercolor = "white";
-    };
-    DaytwoComponent.prototype.switchtoev = function () {
-        this.ishiddenEvent = "none";
-        this.ishiddenReminder = "block";
-        this.eventcolor = "white";
-        this.remindercolor = "blue";
-    };
-    DaytwoComponent.prototype.getallEvents = function (id) {
-        var _this = this;
-        console.log("may i be getallEvent in day two?", this.tempId);
-        var observable = this._httpService.getAlleventsInService(id);
-        observable.subscribe(function (responseData) {
-            //this.tempAuthors.push(responseData);
-            _this.tempArray = [];
-            console.log("the responsedata in getall events of dayTwo is : ", responseData);
-            _this.tempArray.push(responseData);
-            console.log("the tempArray in getall events of dayTwo is : ", _this.tempArray);
-            _this.tempArrayTwo = _this.tempArray[0].events;
-            console.log("what is temparrayTwo Of dayTwo: ", _this.tempArrayTwo);
-            // //sort by desc
-            // this.tempArrayTwo = this.tempArrayTwo.sort((a,b) => {
-            // 	return b.likes-a.likes;
-            // });
-            //console.log(this.tempArray);
-            //this._router.navigate(['/']);
-        });
-    };
-    DaytwoComponent.prototype.getSpecificQuestion = function () {
-        var _this = this;
-        console.log("may i be getSpecificquestion in day Two?");
-        //console.log("what is id now?",this.passID);
-        var observable = this._httpService.getSpecificquestionInService(this.tempId);
-        observable.subscribe(function (responseData) {
-            //this.tempAuthors.push(responseData);
-            console.log("the responsedata in getSpecificQuestion In day two is : ", responseData);
-            _this.whatDay = responseData.day;
-            //console.log("what is tempObj is : ",this.tempObj);
-            //this.tempArray.push(responseData);
-            //console.log(this.tempArray);
-            //this._router.navigate(['/']);
-        });
-    };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Object)
-    ], DaytwoComponent.prototype, "myDays", void 0);
     DaytwoComponent = __decorate([
         core_1.Component({
             selector: 'app-daytwo',
@@ -791,7 +665,7 @@ module.exports = ""
 /***/ "./src/app/management/management.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  management works!\n</p>\n<form (submit)=\"addDaysubmit()\"><input type=\"text\" name=\"ooao\" [(ngModel)]=\"tempQuestion.day\" ><input type=\"submit\" name=\"oouy\" value=\"Add a Day\"></form>\n<div *ngFor=\"let ques of tempArray[0]\"><h5>Day: {{ques.day}}</h5><form (submit)=\"questiondelete(ques._id)\">Delete only if You are administrator!<input type=\"submit\" name=\"Answer\" value=\"Delete\"></form></div> "
+module.exports = "<br>\n<form (submit)=\"addDaysubmit()\"><input type=\"text\" name=\"ooao\" [(ngModel)]=\"tempQuestion.day\" ><input type=\"submit\" name=\"oouy\" value=\"Add a Day\"></form>\n<div *ngFor=\"let ques of tempArray[0]\"><h5>Day: {{ques.day}}</h5><form (submit)=\"questiondelete(ques._id)\">Delete only if You are administrator!<input type=\"submit\" name=\"Answer\" value=\"Delete\"></form></div> "
 
 /***/ }),
 
